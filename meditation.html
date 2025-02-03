@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block title %}Meditation{% endblock %}
+
+{% block content %}
+<h1>Meditation</h1>
+<div id="meditation-suggestions"></div>
+<form id="log-meditation-form">
+    <h2>Log Meditation Session</h2>
+    <input type="number" id="meditation-duration" placeholder="Duration (minutes)" required>
+    <input type="text" id="meditation-type" placeholder="Type of meditation" required>
+    <button type="submit">Log Session</button>
+</form>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/meditation.js') }}"></script>
+{% endblock %}
+

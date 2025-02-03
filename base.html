@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LUMI - {% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <a href="{{ url_for('home') }}" class="logo">LUMI</a>
+            <ul>
+                <li><a href="{{ url_for('overview') }}">Overview</a></li>
+                <li><a href="{{ url_for('goals') }}">Goals</a></li>
+                <li><a href="{{ url_for('routine_analysis') }}">Routine Analysis</a></li>
+                <li><a href="{{ url_for('meditation') }}">Meditation</a></li>
+                <li><a href="{{ url_for('community') }}">Community</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <div class="container">
+            {% block content %}{% endblock %}
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 LUMI. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+    {% block scripts %}{% endblock %}
+</body>
+</html>
+

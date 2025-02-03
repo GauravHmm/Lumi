@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block title %}Routine Analysis{% endblock %}
+
+{% block content %}
+<h1>Routine Analysis</h1>
+<form id="routine-form">
+    <textarea id="routine-data" placeholder="Describe your daily routine..." required></textarea>
+    <button type="submit">Analyze Routine</button>
+</form>
+<div id="analysis-result"></div>
+<div id="routine-history">
+    <h2>Previous Analyses</h2>
+    <ul id="history-list"></ul>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/routine_analysis.js') }}"></script>
+{% endblock %}
+

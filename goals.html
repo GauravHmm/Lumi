@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block title %}Goals{% endblock %}
+
+{% block content %}
+<h1>Your Goals</h1>
+<div id="goals-list"></div>
+<form id="add-goal-form">
+    <h2>Add New Goal</h2>
+    <input type="text" id="goal-title" placeholder="Goal Title" required>
+    <textarea id="goal-description" placeholder="Goal Description"></textarea>
+    <input type="date" id="goal-target-date">
+    <button type="submit">Add Goal</button>
+</form>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/goals.js') }}"></script>
+{% endblock %}
+
