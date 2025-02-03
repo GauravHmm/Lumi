@@ -1,0 +1,203 @@
+/* Reset Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+/* Body with 3D Background */
+body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to bottom, #e6f0ff, #c0dfff); /* Light blue depth effect */
+    background-size: cover;
+    position: relative;
+    overflow: hidden;
+}
+
+/* 3D Floating Shapes */
+body::before, body::after {
+    content: "";
+    position: absolute;
+    width: 250px;
+    height: 250px;
+    background: rgba(0, 113, 227, 0.3);
+    border-radius: 50%;
+    filter: blur(80px);
+    animation: float 6s infinite alternate ease-in-out;
+}
+
+body::before {
+    top: 10%;
+    left: -80px;
+}
+
+body::after {
+    bottom: 10%;
+    right: -80px;
+}
+
+/* Floating Animation */
+@keyframes float {
+    0% {
+        transform: translateY(-20px);
+    }
+    100% {
+        transform: translateY(20px);
+    }
+}
+
+/* LUMI Logo */
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+header h1 {
+    font-size: 42px;
+    font-weight: bold;
+    color: #005BB5;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Login Container */
+.login-container {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 40px;
+    border-radius: 14px;
+    width: 360px;
+    text-align: center;
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    animation: fadeIn 0.6s ease-in-out;
+}
+
+/* Heading */
+h2 {
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 25px;
+}
+
+/* Input Fields */
+.input-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+label {
+    display: block;
+    margin-bottom: 6px;
+    color: #555;
+    font-size: 14px;
+}
+
+input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    background: rgba(255, 255, 255, 0.95);
+    color: #333;
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+input:focus {
+    border-color: #0071E3;
+    outline: none;
+    background: rgba(255, 255, 255, 1);
+    box-shadow: 0 4px 12px rgba(0, 113, 227, 0.3);
+}
+
+/* Buttons */
+button {
+    width: 100%;
+    padding: 14px;
+    background: #0071E3;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out, background 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+button:hover {
+    background: #005BB5;
+    box-shadow: 0 4px 15px rgba(0, 113, 227, 0.4);
+    transform: translateY(-3px);
+}
+
+/* Feedback Message */
+.feedback-message {
+    color: red;
+    margin-top: 15px;
+    font-size: 14px;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.feedback-message.success {
+    color: green;
+    opacity: 1;
+}
+
+/* Signup Link (Bottom Right) */
+.bottom-right {
+    text-align: right;
+    margin-top: 15px;
+}
+
+.bottom-right p {
+    font-size: 14px;
+    color: #555;
+}
+
+.bottom-right a {
+    color: #0071E3;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.bottom-right a:hover {
+    text-decoration: underline;
+}
+
+/* Signup Modal */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 30px;
+    border-radius: 12px;
+    width: 350px;
+    text-align: center;
+    backdrop-filter: blur(10px);
+}
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 20px;
+    cursor: pointer;
+    color: #333;
+}
